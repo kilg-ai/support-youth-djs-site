@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import YouthProfileCard from "../components/YouthProfileCard.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<BaseLayout title="Spotlight" description="Support Youth DJs spotlight placeholders for youth DJ profiles, videos, interviews, practice clips, gear notes, and performance stories.">
+  <section class="page-head">
+    <div class="page-head-inner">
+      <p class="stamp">Spotlight</p>
+      <h1>Youth DJ Stories</h1>
+      <p class="lead">Profiles, videos, interviews, practice clips, gear notes, and performance stories.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <div class="grid">
+        <YouthProfileCard name="Youth DJ Placeholder" detail="Profile space for an approved youth DJ feature." note="Parent/legal guardian approval required before public features." />
+        <YouthProfileCard name="Practice Clip Placeholder" detail="Video or short-form practice clip space." note="Youth DJs under 13 require direct parent/legal guardian involvement." />
+        <YouthProfileCard name="Gear Notes Placeholder" detail="Space for basic equipment, setup, and learning notes." note="Features are considered case by case." />
+      </div>
+      <CTA title="Submit for Consideration" text="Youth DJs 13+ may be submitted for spotlight consideration." href="/submit/" label="Start Submission" />
+    </div>
+  </section>
+</BaseLayout>
