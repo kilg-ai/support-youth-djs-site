@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+
+const products = [
+  { title: "T-Shirts", text: "Campaign T-shirt placeholders for the first merch drop." },
+  { title: "Wristbands", text: "Simple wristband placeholders for events, families, and supporters." },
+  { title: "Future Merch", text: "Space for hats, stickers, bundles, and affiliate gear links when approved." }
+];
+---
+
+<BaseLayout title="Shop" description="Shop placeholders for Support Youth DJs T-shirts, wristbands, and future campaign merch.">
+  <section class="page-head">
+    <div class="page-head-inner">
+      <p class="stamp">Shop</p>
+      <h1>Campaign Merch</h1>
+      <p class="lead">T-shirts, wristbands, and future merch placeholders for Support Youth DJs.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <FeatureGrid items={products} />
+      <CTA title="Checkout Placeholder" text="External checkout links can be added here after products and payment flow are approved." href="/contact/" label="Ask About Shop" />
+    </div>
+  </section>
+</BaseLayout>
