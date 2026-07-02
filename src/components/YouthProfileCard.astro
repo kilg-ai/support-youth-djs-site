@@ -1,0 +1,18 @@
+---
+interface Props {
+  name: string;
+  detail: string;
+  note: string;
+}
+
+const { name, detail, note } = Astro.props;
+---
+
+<article class="profile-card">
+  <div class="record-mark" aria-hidden="true"></div>
+  <div>
+    <h3>{name}</h3>
+    <p>{detail}</p>
+    <small>{note}</small>
+  </div>
+</article>
