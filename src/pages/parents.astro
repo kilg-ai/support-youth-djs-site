@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+
+const parentNotes = [
+  { title: "Consent", text: "Minors require parent/legal guardian consent before public features." },
+  { title: "Under 13", text: "Youth DJs under 13 require direct parent/legal guardian involvement in submission, video, and approval." },
+  { title: "No Guarantees", text: "Participation or purchase does not guarantee bookings, sponsorships, coverage, or career outcomes." }
+];
+---
+
+<BaseLayout title="Parents" description="Parent and legal guardian information for Support Youth DJs safety, consent, review, and no-guarantee standards.">
+  <section class="page-head">
+    <div class="page-head-inner">
+      <p class="stamp">Parents</p>
+      <h1>Parent Approval Matters</h1>
+      <p class="lead">Safety, consent, and clear expectations come before any public feature.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <FeatureGrid items={parentNotes} />
+    </div>
+  </section>
+</BaseLayout>
