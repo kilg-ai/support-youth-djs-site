@@ -1,0 +1,315 @@
+---
+import { navItems } from "../data/nav";
+import { site } from "../data/site";
+import Disclaimer from "../components/Disclaimer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#050505" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Support Youth DJs home">
+        <span class="brand-mark">SYD</span>
+        <span>{site.name}</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>Support Youth DJs is operated by Ryan the 1 LLC.</p>
+      <Disclaimer />
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+    --bg: #050505;
+    --ink: #ffffff;
+    --muted: #bdbdbd;
+    --line: #2d2d2d;
+    --paper: #f4f1e8;
+    --accent: #d7ff3f;
+    --accent-2: #ff4d2e;
+    --panel: #111111;
+    font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+      var(--bg);
+    background-size: 28px 28px;
+    color: var(--ink);
+    letter-spacing: 0;
+    min-width: 320px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.14) 0.7px, transparent 0.7px);
+    background-size: 5px 5px;
+    mix-blend-mode: screen;
+    opacity: 0.18;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px clamp(18px, 5vw, 56px);
+    border-bottom: 4px solid var(--ink);
+    background: #050505;
+  }
+
+  .brand {
+    align-items: center;
+    display: inline-flex;
+    gap: 12px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .brand-mark {
+    background: var(--accent);
+    color: #050505;
+    display: inline-grid;
+    font-size: 0.9rem;
+    min-height: 42px;
+    min-width: 42px;
+    place-items: center;
+    transform: rotate(-3deg);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  nav a,
+  .button,
+  .text-link {
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    display: inline-flex;
+    font-size: 0.86rem;
+    line-height: 1;
+    padding: 12px 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav a:hover,
+  .button:hover,
+  .text-link:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .hero,
+  .section,
+  .page-head {
+    padding: clamp(46px, 9vw, 96px) clamp(18px, 5vw, 56px);
+  }
+
+  .hero {
+    border-bottom: 4px solid var(--ink);
+    min-height: 74vh;
+    display: grid;
+    align-content: center;
+    gap: 26px;
+  }
+
+  .hero-inner,
+  .section-inner,
+  .page-head-inner {
+    max-width: 1120px;
+    width: 100%;
+  }
+
+  .stamp {
+    background: var(--accent-2);
+    color: var(--ink);
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 14vw, 9rem);
+    line-height: 0.88;
+    margin-bottom: 20px;
+    max-width: 980px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 7vw, 4.8rem);
+    line-height: 0.95;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  p,
+  li,
+  small {
+    color: var(--muted);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .lead {
+    color: var(--ink);
+    font-size: clamp(1.18rem, 4vw, 1.9rem);
+    line-height: 1.35;
+    max-width: 780px;
+  }
+
+  .kicker {
+    color: var(--accent);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .panel,
+  .profile-card,
+  .cta-block {
+    background: var(--panel);
+    border: 2px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--accent);
+    padding: 22px;
+  }
+
+  .profile-card {
+    display: flex;
+    gap: 18px;
+  }
+
+  .record-mark {
+    aspect-ratio: 1;
+    background:
+      radial-gradient(circle, var(--ink) 0 8%, transparent 9% 19%, var(--ink) 20% 23%, transparent 24% 100%);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    flex: 0 0 70px;
+  }
+
+  .cta-block {
+    align-items: start;
+    display: grid;
+    gap: 22px;
+    margin-top: 28px;
+  }
+
+  .list {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+
+  .list li {
+    border-left: 6px solid var(--accent);
+    background: #0d0d0d;
+    padding: 14px 16px;
+  }
+
+  .site-footer {
+    border-top: 4px solid var(--ink);
+    padding: 28px clamp(18px, 5vw, 56px);
+  }
+
+  .disclaimers {
+    display: grid;
+    gap: 6px;
+    max-width: 1080px;
+  }
+
+  .disclaimers p,
+  .site-footer p {
+    font-size: 0.88rem;
+  }
+
+  @media (min-width: 820px) {
+    .site-header {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .cta-block {
+      align-items: center;
+      grid-template-columns: 1fr auto;
+    }
+  }
+</style>
