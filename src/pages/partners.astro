@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+
+const partners = [
+  { title: "Music Community", text: "DJs, producers, radio, venues, and music educators can connect around approved campaign ideas." },
+  { title: "Brands", text: "Brands and sponsors can discuss merch, gear, education, and community support opportunities." },
+  { title: "Mentors", text: "Experienced creatives can help shape safe, parent-aware youth DJ support." }
+];
+---
+
+<BaseLayout title="Partners" description="Partner information for DJs, producers, radio, venues, brands, music educators, sponsors, and mentors.">
+  <section class="page-head">
+    <div class="page-head-inner">
+      <p class="stamp">Partners</p>
+      <h1>Build Around Youth DJ Culture</h1>
+      <p class="lead">A place for DJs, producers, radio, venues, brands, music educators, sponsors, and mentors.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <FeatureGrid items={partners} />
+      <CTA title="Partner Inquiry" text="Use the contact email for campaign, shop, and partner conversations." href="/contact/" label="Contact" />
+    </div>
+  </section>
+</BaseLayout>
