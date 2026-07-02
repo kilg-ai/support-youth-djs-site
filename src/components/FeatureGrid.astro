@@ -1,0 +1,17 @@
+---
+interface Item {
+  title: string;
+  text: string;
+}
+
+const { items } = Astro.props as { items: Item[] };
+---
+
+<div class="grid">
+  {items.map((item) => (
+    <article class="panel">
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </article>
+  ))}
+</div>
