@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import { site } from "../data/site";
+
+const features = [
+  { title: "Merch", text: "T-shirts, wristbands, and future campaign items built around youth DJ culture." },
+  { title: "Stories", text: "Spotlight space for youth DJ profiles, practice clips, gear notes, and performance stories." },
+  { title: "Support", text: "A community campaign for families, DJs, music educators, brands, and partners." }
+];
+---
+
+<BaseLayout title={site.name} description="Support Youth DJs is a Ryan the 1 LLC community campaign for merch, stories, and support for the next generation of DJs.">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="stamp">Community Campaign</p>
+      <h1>Support Youth DJs</h1>
+      <p class="lead">Merch, stories, and support for the next generation of DJs.</p>
+      <p class="kicker">Operated by Ryan the 1 LLC.</p>
+      <div class="actions">
+        <a class="button" href="/shop/">Shop Campaign Merch</a>
+        <a class="button" href="/submit/">Submit a Youth DJ</a>
+        <a class="button" href="/partners/">Partner With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2>What This Is</h2>
+      <p class="lead">Support Youth DJs is a Ryan the 1 LLC community campaign for youth DJ culture.</p>
+      <FeatureGrid items={features} />
+      <CTA title="Youth DJ Spotlight" text="Youth DJs 13+ may be submitted for spotlight consideration." href="/spotlight/" label="View Spotlight" />
+    </div>
+  </section>
+</BaseLayout>
