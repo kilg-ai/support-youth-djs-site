@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<BaseLayout title="Submit" description="Submission information for youth DJs 13+ with parent or legal guardian consent requirements.">
+  <section class="page-head">
+    <div class="page-head-inner">
+      <p class="stamp">Submit</p>
+      <h1>Submit a Youth DJ</h1>
+      <p class="lead">Youth DJs 13+ may be submitted for spotlight consideration.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <h2>Consent First</h2>
+      <ul class="list">
+        <li>Minors require parent/legal guardian consent before public features.</li>
+        <li>Youth DJs under 13 require direct parent/legal guardian involvement in submission, video, and approval.</li>
+        <li>Submissions are reviewed for fit, safety, and approval before anything is public.</li>
+      </ul>
+      <CTA title="Submission Form Placeholder" text="A form link can be added after the approval process and privacy language are finalized." href="/parents/" label="Parent Info" />
+    </div>
+  </section>
+</BaseLayout>
