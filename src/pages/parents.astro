@@ -5,6 +5,7 @@ import FeatureGrid from "../components/FeatureGrid.astro";
 const parentNotes = [
   { title: "Consent", text: "Minors require parent/legal guardian consent before public features." },
   { title: "Under 13", text: "Youth DJs under 13 require direct parent/legal guardian involvement in submission, video, and approval." },
+  { title: "Clean Standards", text: "Spotlight material should be parent-approved, youth-appropriate, and suitable for the public campaign." },
   { title: "No Guarantees", text: "Participation or purchase does not guarantee bookings, sponsorships, coverage, or career outcomes." }
 ];
 ---
@@ -14,12 +15,17 @@ const parentNotes = [
     <div class="page-head-inner">
       <p class="stamp">Parents</p>
       <h1>Parent Approval Matters</h1>
-      <p class="lead">Safety, consent, and clear expectations come before any public feature.</p>
+      <p class="lead">Safety, consent, and clear expectations come before any public feature. Support Youth DJs is built to be culture-forward and parent-readable at the same time.</p>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
       <FeatureGrid items={parentNotes} />
+      <ul class="list">
+        <li>Parents should review every submitted photo, video, link, and bio before sending.</li>
+        <li>Public features should never include private school, home address, private schedule, or sensitive family information.</li>
+        <li>Parents can use the contact email for questions before any public feature is approved.</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>
