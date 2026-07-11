@@ -4,24 +4,82 @@ import CTA from "../components/CTA.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 
 const products = [
-  { title: "T-Shirts", text: "Campaign T-shirt placeholders for the first merch drop." },
-  { title: "Wristbands", text: "Simple wristband placeholders for events, families, and supporters." },
-  { title: "Future Merch", text: "Space for hats, stickers, bundles, and affiliate gear links when approved." }
+  { title: "Statement Tees", text: "Bold Support Youth DJs shirts built around the campaign mark and The Culture. The Future. line." },
+  { title: "Wristbands", text: "Simple, low-cost campaign items for families, supporters, students, and local events." },
+  { title: "Affiliate Gear", text: "Future gear links for starter controllers, headphones, cases, cables, and practice tools." }
 ];
 ---
 
-<BaseLayout title="Shop" description="Shop placeholders for Support Youth DJs T-shirts, wristbands, and future campaign merch.">
+<BaseLayout title="Shop" description="Shop Support Youth DJs campaign merch and future affiliate gear picks.">
   <section class="page-head">
     <div class="page-head-inner">
       <p class="stamp">Shop</p>
-      <h1>Campaign Merch</h1>
-      <p class="lead">T-shirts, wristbands, and future merch placeholders for Support Youth DJs.</p>
+      <h1>Wear the Culture</h1>
+      <p class="lead">Merch gives supporters a simple way to back youth DJ culture while keeping the campaign independent and easy to grow.</p>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
       <FeatureGrid items={products} />
-      <CTA title="Checkout Placeholder" text="External checkout links can be added here after products and payment flow are approved." href="/contact/" label="Ask About Shop" />
+      <div class="shop-board">
+        <article class="drop-card">
+          <div class="drop-mark">SYD</div>
+          <div>
+            <p class="kicker">First Drop Concept</p>
+            <h2>Logo Tee + Wristband Pack</h2>
+            <p>Use this space for the first external checkout link when products, pricing, shipping, and refund terms are ready.</p>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>Affiliate Disclosure</h3>
+          <p>Some links may be affiliate links. We may earn a commission if you purchase through those links, at no extra cost to you.</p>
+        </article>
+      </div>
+      <CTA title="Shop Setup" text="External checkout links can be added after products, payment flow, shipping terms, and refund language are approved." href="/contact/" label="Ask About Shop" />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .shop-board {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .drop-card {
+    align-items: center;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    color: #050505;
+    display: grid;
+    gap: 22px;
+    padding: clamp(20px, 5vw, 36px);
+  }
+
+  .drop-card p { color: #151515; }
+  .drop-card .kicker { color: var(--accent); }
+
+  .drop-mark {
+    align-items: center;
+    aspect-ratio: 1;
+    background: #050505;
+    border: 10px solid var(--accent);
+    color: var(--paper);
+    display: grid;
+    font-size: clamp(4rem, 20vw, 10rem);
+    justify-items: center;
+    line-height: 1;
+    margin: 0 auto;
+    max-width: 360px;
+    text-align: center;
+    transform: rotate(-2deg);
+    width: 100%;
+  }
+
+  @media (min-width: 820px) {
+    .drop-card {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+  }
+</style>
