@@ -19,6 +19,8 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#050505" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
   </head>
@@ -38,7 +40,13 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     </main>
 
     <footer class="site-footer">
-      <p>Support Youth DJs is operated by Ryan the 1 LLC.</p>
+      <div class="footer-top">
+        <div class="footer-mark">SYD</div>
+        <div>
+          <p>Support Youth DJs is operated by Ryan the 1 LLC.</p>
+          <p class="footer-links"><a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></p>
+        </div>
+      </div>
       <Disclaimer />
     </footer>
   </body>
@@ -49,11 +57,12 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     color-scheme: dark;
     --bg: #050505;
     --ink: #ffffff;
-    --muted: #bdbdbd;
+    --muted: #d0d0d0;
     --line: #2d2d2d;
-    --paper: #f4f1e8;
-    --accent: #d7ff3f;
-    --accent-2: #ff4d2e;
+    --paper: #f8f4e8;
+    --accent: #c3161c;
+    --accent-2: #ffffff;
+    --gold: #e8c24c;
     --panel: #111111;
     font-family: "Arial Black", Arial, Helvetica, sans-serif;
   }
@@ -65,8 +74,8 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
   body {
     margin: 0;
     background:
-      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(180deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255,255,255,0.02) 1px, transparent 1px),
       var(--bg);
     background-size: 28px 28px;
     color: var(--ink);
@@ -85,9 +94,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     opacity: 0.18;
   }
 
-  a {
-    color: inherit;
-  }
+  a { color: inherit; }
 
   .site-header {
     display: flex;
@@ -96,6 +103,9 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     padding: 18px clamp(18px, 5vw, 56px);
     border-bottom: 4px solid var(--ink);
     background: #050505;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
 
   .brand {
@@ -103,17 +113,20 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     display: inline-flex;
     gap: 12px;
     font-size: 1.1rem;
+    font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
   }
 
-  .brand-mark {
+  .brand-mark,
+  .footer-mark {
     background: var(--accent);
-    color: #050505;
+    border: 2px solid var(--ink);
+    color: var(--ink);
     display: inline-grid;
-    font-size: 0.9rem;
-    min-height: 42px;
-    min-width: 42px;
+    font-size: 0.95rem;
+    min-height: 46px;
+    min-width: 46px;
     place-items: center;
     transform: rotate(-3deg);
   }
@@ -135,12 +148,26 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     padding: 12px 14px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
   }
 
   nav a:hover,
   .button:hover,
   .text-link:hover {
     background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-2px);
+  }
+
+  .button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .button.primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
     color: var(--bg);
   }
 
@@ -152,10 +179,25 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
 
   .hero {
     border-bottom: 4px solid var(--ink);
-    min-height: 74vh;
+    min-height: 78vh;
     display: grid;
     align-content: center;
     gap: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    background: radial-gradient(circle at center, transparent 0 17%, rgba(255,255,255,0.12) 18% 19%, transparent 20% 35%, rgba(255,255,255,0.08) 36% 37%, transparent 38% 100%);
+    height: min(70vw, 760px);
+    opacity: 0.32;
+    position: absolute;
+    right: -18vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(70vw, 760px);
+    z-index: -1;
   }
 
   .hero-inner,
@@ -166,7 +208,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
   }
 
   .stamp {
-    background: var(--accent-2);
+    background: var(--accent);
     color: var(--ink);
     display: inline-block;
     margin: 0 0 18px;
@@ -175,12 +217,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     transform: rotate(-2deg);
   }
 
-  h1,
-  h2,
-  h3,
-  p {
-    margin-top: 0;
-  }
+  h1, h2, h3, p { margin-top: 0; }
 
   h1 {
     font-size: clamp(3rem, 14vw, 9rem);
@@ -204,9 +241,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     text-transform: uppercase;
   }
 
-  p,
-  li,
-  small {
+  p, li, small {
     color: var(--muted);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -221,7 +256,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
   }
 
   .kicker {
-    color: var(--accent);
+    color: var(--gold);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
@@ -249,6 +284,9 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     padding: 22px;
   }
 
+  .panel.red { background: var(--accent); }
+  .panel.red p, .panel.red small { color: var(--ink); }
+
   .profile-card {
     display: flex;
     gap: 18px;
@@ -256,8 +294,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
 
   .record-mark {
     aspect-ratio: 1;
-    background:
-      radial-gradient(circle, var(--ink) 0 8%, transparent 9% 19%, var(--ink) 20% 23%, transparent 24% 100%);
+    background: radial-gradient(circle, var(--ink) 0 8%, transparent 9% 19%, var(--ink) 20% 23%, transparent 24% 100%);
     border: 2px solid var(--ink);
     border-radius: 50%;
     flex: 0 0 70px;
@@ -289,6 +326,18 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     padding: 28px clamp(18px, 5vw, 56px);
   }
 
+  .footer-top {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 12px;
+  }
+
   .disclaimers {
     display: grid;
     gap: 6px;
@@ -296,9 +345,7 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
   }
 
   .disclaimers p,
-  .site-footer p {
-    font-size: 0.88rem;
-  }
+  .site-footer p { font-size: 0.88rem; }
 
   @media (min-width: 820px) {
     .site-header {
