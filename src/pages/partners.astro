@@ -6,6 +6,7 @@ import FeatureGrid from "../components/FeatureGrid.astro";
 const partners = [
   { title: "Music Community", text: "DJs, producers, radio, venues, and music educators can connect around approved campaign ideas." },
   { title: "Brands", text: "Brands and sponsors can discuss merch, gear, education, and community support opportunities." },
+  { title: "Affiliate Partners", text: "Relevant gear and education links can support the campaign when the fit is clear and disclosed." },
   { title: "Mentors", text: "Experienced creatives can help shape safe, parent-aware youth DJ support." }
 ];
 ---
@@ -15,13 +16,13 @@ const partners = [
     <div class="page-head-inner">
       <p class="stamp">Partners</p>
       <h1>Build Around Youth DJ Culture</h1>
-      <p class="lead">A place for DJs, producers, radio, venues, brands, music educators, sponsors, and mentors.</p>
+      <p class="lead">A place for DJs, producers, radio, venues, brands, music educators, sponsors, mentors, and affiliate partners to support the culture without overpromising outcomes.</p>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
       <FeatureGrid items={partners} />
-      <CTA title="Partner Inquiry" text="Use the contact email for campaign, shop, and partner conversations." href="/contact/" label="Contact" />
+      <CTA title="Partner Inquiry" text="Use the contact email for campaign, shop, affiliate, and partner conversations. Partnerships do not guarantee placements or career outcomes." href="/contact/" label="Contact" />
     </div>
   </section>
 </BaseLayout>
