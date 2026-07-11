@@ -5,9 +5,16 @@ import FeatureGrid from "../components/FeatureGrid.astro";
 import { site } from "../data/site";
 
 const features = [
-  { title: "Merch", text: "T-shirts, wristbands, and future campaign items built around youth DJ culture." },
-  { title: "Stories", text: "Spotlight space for youth DJ profiles, practice clips, gear notes, and performance stories." },
-  { title: "Support", text: "A community campaign for families, DJs, music educators, brands, and partners." }
+  { title: "Merch That Moves", text: "T-shirts, wristbands, and drops built around the sound, style, and grind of young DJs." },
+  { title: "Approved Stories", text: "Parent-aware spotlights for youth DJs, practice clips, gear notes, interviews, and local scenes." },
+  { title: "Affiliate Gear", text: "Future gear picks can earn affiliate revenue while pointing families toward useful starter tools." }
+];
+
+const lanes = [
+  "Feature youth DJs with parent/legal guardian approval.",
+  "Sell campaign merch without calling purchases donations.",
+  "Build partner and affiliate revenue without promising outcomes.",
+  "Keep the culture sharp, safe, and youth-forward."
 ];
 ---
 
@@ -17,9 +24,9 @@ const features = [
       <p class="stamp">Community Campaign</p>
       <h1>Support Youth DJs</h1>
       <p class="lead">Merch, stories, and support for the next generation of DJs.</p>
-      <p class="kicker">Operated by Ryan the 1 LLC.</p>
+      <p class="kicker">The Culture. The Future. Operated by Ryan the 1 LLC.</p>
       <div class="actions">
-        <a class="button" href="/shop/">Shop Campaign Merch</a>
+        <a class="button primary" href="/shop/">Shop Campaign Merch</a>
         <a class="button" href="/submit/">Submit a Youth DJ</a>
         <a class="button" href="/partners/">Partner With Us</a>
       </div>
@@ -28,10 +35,46 @@ const features = [
 
   <section class="section">
     <div class="section-inner">
-      <h2>What This Is</h2>
-      <p class="lead">Support Youth DJs is a Ryan the 1 LLC community campaign for youth DJ culture.</p>
+      <h2>The Culture. The Future.</h2>
+      <p class="lead">Support Youth DJs is a Ryan the 1 LLC campaign built to spotlight young DJs, sell campaign merch, and create a clean path for families, partners, and supporters to participate.</p>
       <FeatureGrid items={features} />
-      <CTA title="Youth DJ Spotlight" text="Youth DJs 13+ may be submitted for spotlight consideration." href="/spotlight/" label="View Spotlight" />
+      <ul class="list">
+        {lanes.map((item) => <li>{item}</li>)}
+      </ul>
+      <CTA title="Youth DJ Spotlight" text="Youth DJs 13+ may be submitted for spotlight consideration. Minors require parent/legal guardian consent before public features." href="/spotlight/" label="View Spotlight" />
+    </div>
+  </section>
+
+  <section class="section split-section">
+    <div class="section-inner split">
+      <article>
+        <p class="stamp">Revenue Paths</p>
+        <h2>Merch first. Affiliate smart. Culture always.</h2>
+      </article>
+      <div class="grid">
+        <article class="panel red">
+          <h3>Shop Drops</h3>
+          <p>Launch with shirts and wristbands, then test bundles, stickers, hats, and event-ready items.</p>
+        </article>
+        <article class="panel">
+          <h3>Gear Links</h3>
+          <p>Add approved affiliate links for beginner controllers, headphones, cases, cables, stands, and software.</p>
+        </article>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .split {
+    display: grid;
+    gap: 28px;
+  }
+
+  @media (min-width: 860px) {
+    .split {
+      align-items: start;
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+  }
+</style>
