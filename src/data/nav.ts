@@ -1,9 +1,11 @@
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/shop/", label: "Shop" },
+  { href: "/djs/", label: "Find DJs" },
+  { href: "/submit/", label: "Join the Directory" },
+  { href: "/learn/", label: "Learn" },
   { href: "/spotlight/", label: "Spotlight" },
-  { href: "/submit/", label: "Submit" },
+  { href: "/questions/", label: "Questions & Answers" },
+  { href: "/resources/", label: "Resources" },
   { href: "/parents/", label: "Parents" },
-  { href: "/partners/", label: "Partners" },
-  { href: "/contact/", label: "Contact" }
+  { href: "/about/", label: "About" }
 ];
