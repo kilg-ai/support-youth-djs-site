@@ -3,24 +3,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 ---
 
-<BaseLayout title="Privacy" description="Privacy overview for Support Youth DJs directory submissions, contact, merchandise, and affiliate activity.">
+<BaseLayout title="Privacy" description="Privacy overview for Support Youth DJs public-link directory submissions, moderation, administrative contact data, correction, and removal.">
   <section class="page-head">
     <div class="page-head-inner">
       <p class="stamp">Privacy</p>
       <h1>Privacy Overview</h1>
-      <p class="lead">Support Youth DJs should collect only what is needed to review directory submissions, answer messages, maintain public resources, and run the platform responsibly.</p>
+      <p class="lead">Support Youth DJs collects only the information needed to review public-link directory submissions, respond to messages, maintain resources, and operate the platform responsibly.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="section-inner">
+      <p class="kicker">Draft privacy language for legal review.</p>
       <div class="grid">
-        <article class="panel"><h2>Submissions</h2><p>Submission forms may ask for public DJ name, age range, city, state, genres, public links, submitter role, private administrative email, and consent acknowledgements. Media should be submitted as public URLs only.</p></article>
-        <article class="panel"><h2>Contact</h2><p>Emails sent to {site.contactEmail} or {site.shopEmail} may be used to respond to directory, shop, parent, submission, partner, or affiliate questions.</p></article>
-        <article class="panel"><h2>Shop</h2><p>Merch checkout may happen through an external provider after commerce is approved. Their privacy, payment, shipping, and refund rules may apply.</p></article>
-        <article class="panel"><h2>Affiliate Links</h2><p>Some links may be affiliate links. Affiliate platforms may track clicks or purchases according to their own policies.</p></article>
+        <article class="panel"><h2>Directory Intake</h2><p>Directory intake may ask for public DJ name, age range, city, state, genres, submitter role, public URLs, administrative contact email, and review acknowledgements.</p></article>
+        <article class="panel"><h2>Public Links</h2><p>Phase 1 submissions are links-only. Support Youth DJs does not accept uploads through the directory intake. Public external links may lead to platforms outside Support Youth DJs.</p></article>
+        <article class="panel"><h2>Age Routing</h2><p>DJs ages 13-17 may initiate their own directory submission. DJs under 13 require parent or legal guardian submission. Adults are not eligible for directory profiles.</p></article>
+        <article class="panel"><h2>Staff-Entered Details</h2><p>Brief profile text, categories, related resources, or editorial context may be entered internally by staff during review before publication.</p></article>
+        <article class="panel"><h2>Administrative Contact</h2><p>Emails sent to {site.contactEmail} or {site.shopEmail} may be used to answer directory, parent, profile correction, profile removal, editorial, resource, contributor, or merchandise questions.</p></article>
+        <article class="panel"><h2>Merchandise and Affiliate Links</h2><p>If merchandise or affiliate links are used, outside providers may process payments, shipping, analytics, click tracking, or purchases according to their own policies.</p></article>
       </div>
-      <ul class="list"><li>Do not submit private school, home address, private schedule, phone number, or sensitive family information for a youth DJ profile.</li><li>No file uploads are accepted through the Phase 1 directory intake.</li><li>Parents/legal guardians can contact Support Youth DJs with questions before a public feature is approved.</li><li>This privacy overview should be reviewed before large-scale submissions or paid advertising begin.</li></ul>
+      <ul class="list"><li>Private phone numbers, private emails, home addresses, schools, exact birth dates, private schedules, and sensitive family information should not be submitted for publication.</li><li>Every directory submission is reviewed before publication. There is no automatic publication.</li><li>Parents, guardians, youth DJs, or appropriate contacts may request correction or removal of a published profile or public link.</li><li>This overview is not final legal advice and should be reviewed before large-scale submissions, paid advertising, or expanded data collection begin.</li></ul>
     </div>
   </section>
 </BaseLayout>
