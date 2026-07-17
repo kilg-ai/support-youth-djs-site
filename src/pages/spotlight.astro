@@ -3,14 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 
 const lanes = [
-  { title: "First Set Stories", text: "Short stories about preparing for a first public set, what went right, what felt hard, and what the DJ learned." },
-  { title: "Practice Clips", text: "Approved public links to clean practice clips, routines, scratches, transitions, and short mixes with staff-written context." },
-  { title: "Gear Decisions", text: "Practical notes about controllers, headphones, crates, cables, speakers, cases, and what can wait until later." },
-  { title: "Community Features", text: "Youth-DJ movements, workshops, camps, competitions, events, and local scenes supported by public sources." }
+  { title: "Public Work", text: "Approved public sets, mixes, videos, social links, and performance stories can connect back to directory profiles." },
+  { title: "Real Experience", text: "Stories can document bookings, equipment decisions, technical problems, mistakes, recovery, client communication, and lessons learned." },
+  { title: "Related Questions", text: "Spotlight articles can connect to questions, answers, learning topics, resources, cities, states, genres, and contributors." },
+  { title: "Culture and Community", text: "Coverage can include youth DJ movements, local scenes, programs, educators, experienced contributors, cultural history, and advocacy topics." }
 ];
 ---
 
-<BaseLayout title="Spotlight" description="Editorial youth DJ stories, public performance notes, gear decisions, interviews, and community stories.">
-  <section class="page-head"><div class="page-head-inner"><p class="stamp">Spotlight</p><h1>Stories from the culture.</h1><p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ may join the directory without receiving a Spotlight feature.</p></div></section>
+<BaseLayout title="Spotlight" description="Editorial youth DJ stories, public work, real DJ experience, and connected culture coverage.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Spotlight</p><h1>Stories from the culture.</h1><p class="lead">Spotlight is editorial and separate from directory eligibility. It connects public work, real DJ experience, questions, learning topics, resources, programs, and youth DJ culture.</p></div></section>
   <section class="section"><div class="section-inner"><div class="grid">{lanes.map((lane, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{lane.title}</h3><p>{lane.text}</p></article>)}</div><CTA title="Join the Directory" text="Directory submission does not require a Spotlight feature. Eligible DJs can submit approved public links for moderation." href="/submit/" label="Join" /></div></section>
 </BaseLayout>
