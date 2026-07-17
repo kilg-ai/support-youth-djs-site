@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import CTA from "../components/CTA.astro";
+
+const topics = [
+  { title: "Start DJing", text: "Music organization, headphones, controller basics, clean practice habits, and a realistic setup plan." },
+  { title: "Practice Better", text: "Short practice blocks for transitions, cue points, scratches, drops, and recording sets for review." },
+  { title: "Play for People", text: "Prepare for small public moments, read the room, build clean crates, and understand performance basics." },
+  { title: "Choose Equipment", text: "Controllers, headphones, speakers, stands, cases, cables, and software explained by need instead of hype." },
+  { title: "Build a Brand", text: "Public DJ name, profile links, videos, mixes, photos, and how to show progress without overselling." },
+  { title: "Give Back", text: "Respecting other DJs, crediting sources, supporting scenes, and learning from different generations." }
+];
+---
+
+<BaseLayout title="Learn" description="Learning topics for youth DJs and anyone improving their DJ craft.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Learn</p><h1>Learn from DJ culture.</h1><p class="lead">Learning is open to everyone. The directory is exclusively for DJs under 18.</p></div></section>
+  <section class="section"><div class="section-inner"><FeatureGrid items={topics} /><CTA title="Questions & Answers" text="Phase 1 Q&A is editorial only. No public question submission, comments, forums, or accounts are active." href="/questions/" label="Read Q&A" /></div></section>
+</BaseLayout>
