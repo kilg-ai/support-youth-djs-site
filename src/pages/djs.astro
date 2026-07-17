@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<BaseLayout title="Find DJs" description="Find youth DJs under 18 by city, state, genre, age range, and recently added profiles.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Find DJs</p><h1>Youth DJ Directory</h1><p class="lead">Browse DJs under 18 by city, state, genre, age range, and recently added profiles. Adult DJs are welcome to use learning resources but are not listed in the directory.</p></div></section>
+  <section class="section"><div class="section-inner">
+    <div class="grid">
+      <article class="panel red"><h3>Directory opening soon</h3><p>No youth DJs have been published yet. The first profiles will go live only after public links, age eligibility, consent needs, and moderation are complete.</p></article>
+      <article class="panel"><h3>Charlotte</h3><p>First launch market. Approved youth DJ profiles will appear after submission review.</p></article>
+      <article class="panel"><h3>North Carolina</h3><p>State browsing will expand as eligible DJs submit public links.</p></article>
+    </div>
+    <CTA title="No youth DJs in your city yet?" text="Invite an eligible DJ to join the directory. Submissions are link-based and reviewed before publication." href="/submit/" label="Join the Directory" />
+  </div></section>
+</BaseLayout>
