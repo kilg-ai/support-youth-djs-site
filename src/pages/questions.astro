@@ -3,13 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 
 const questions = [
-  { title: "What should a new DJ practice first?", text: "Start with clean transitions, music organization, and recording short practice sets. Fancy tricks make more sense after the basics sound steady." },
-  { title: "When is it time to upgrade equipment?", text: "Upgrade when the current setup blocks a real need. Better practice, cleaner crates, and stronger preparation often matter before new gear." },
-  { title: "How should a youth DJ share work publicly?", text: "Use approved public links, keep private contact information off the site, and make sure a parent or legal guardian understands what is being shared." }
+  { title: "How do youth DJs prepare for real bookings?", text: "Answers can connect client communication, set preparation, clean music, parent involvement, pricing questions, expectations, and recovery when plans change." },
+  { title: "When is it time to upgrade equipment?", text: "Equipment questions should connect to real needs, technical problems, performance goals, budget, practice habits, and related resources." },
+  { title: "How should a youth DJ share public work?", text: "Public work can connect directory profiles, social links, mixes, videos, Spotlight stories, learning topics, city or state, and related contributors." }
 ];
 ---
 
-<BaseLayout title="Questions & Answers" description="Editorial DJ questions, answers, interviews, and multiple perspectives for Support Youth DJs.">
-  <section class="page-head"><div class="page-head-inner"><p class="stamp">Questions & Answers</p><h1>Real questions. Useful answers.</h1><p class="lead">Phase 1 Q&A is created and managed by the editorial team.</p></div></section>
-  <section class="section"><div class="section-inner"><div class="grid">{questions.map((item, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><CTA title="No Public Posting Yet" text="No comments, forums, public answer submission, or user accounts are part of Phase 1." href="/learn/" label="Learn" /></div></section>
+<BaseLayout title="Questions & Answers" description="Editorial DJ questions, answers, interviews, and connected perspectives for Support Youth DJs.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Questions & Answers</p><h1>Questions connect the platform.</h1><p class="lead">Questions and perspectives can connect DJ profiles, Spotlight articles, learning topics, resources, programs, cities, states, genres, and contributors. Phase 1 Q&A is editorially managed.</p></div></section>
+  <section class="section"><div class="section-inner"><div class="grid">{questions.map((item, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><CTA title="No Public Posting Yet" text="No comments, forums, public answer submission, voting, badges, or user accounts are part of Phase 1." href="/learn/" label="Learn" /></div></section>
 </BaseLayout>
