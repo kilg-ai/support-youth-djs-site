@@ -3,28 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 ---
 
-<BaseLayout title="Contact" description="Contact Support Youth DJs using the official contact and shop email addresses.">
-  <section class="page-head">
-    <div class="page-head-inner">
-      <p class="stamp">Contact</p>
-      <h1>Contact</h1>
-      <p class="lead">Use the official emails for campaign questions, shop support, partner conversations, and youth DJ submission questions.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-inner">
-      <div class="grid">
-        <article class="panel">
-          <h2>Campaign</h2>
-          <p><a class="text-link" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a></p>
-          <p>General campaign, spotlight, parent, partner, and submission questions.</p>
-        </article>
-        <article class="panel">
-          <h2>Shop</h2>
-          <p><a class="text-link" href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a></p>
-          <p>Merch, order, product, and affiliate shop questions.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Contact" description="Contact Support Youth DJs about directory, editorial, resources, contributors, merchandise, and platform questions.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Contact</p><h1>Contact</h1><p class="lead">Use the official emails for directory questions, public-link submissions, parent questions, editorial ideas, resources, contributors, programs, and shop support.</p></div></section>
+  <section class="section"><div class="section-inner"><div class="grid"><article class="panel"><h2>Platform</h2><p><a class="text-link" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a></p><p>Directory, public links, Spotlight, questions, resources, programs, contributors, parents, and advocacy topics.</p></article><article class="panel"><h2>Shop</h2><p><a class="text-link" href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a></p><p>Merchandise questions only. Checkout remains inactive until commerce is audited and approved.</p></article></div></div></section>
 </BaseLayout>
