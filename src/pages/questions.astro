@@ -11,5 +11,5 @@ const questions = [
 
 <BaseLayout title="Questions & Answers" description="Editorial DJ questions, answers, interviews, and connected perspectives for Support Youth DJs.">
   <section class="page-head"><div class="page-head-inner"><p class="stamp">Questions & Answers</p><h1>Questions connect the platform.</h1><p class="lead">Questions and perspectives can connect DJ profiles, Spotlight articles, learning topics, resources, programs, cities, states, genres, and contributors. Phase 1 Q&A is editorially managed.</p></div></section>
-  <section class="section"><div class="section-inner"><div class="grid">{questions.map((item, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><CTA title="No Public Posting Yet" text="No comments, forums, public answer submission, voting, badges, or user accounts are part of Phase 1." href="/learn/" label="Learn" /></div></section>
+  <section class="section"><div class="section-inner"><div class="grid">{questions.map((item, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div><CTA title="Editorial Phase" text="Phase 1 uses selected questions and reviewed answers before anything is published." href="/learn/" label="Learn" /></div></section>
 </BaseLayout>
