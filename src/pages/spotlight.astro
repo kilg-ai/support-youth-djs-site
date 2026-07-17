@@ -1,25 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import YouthProfileCard from "../components/YouthProfileCard.astro";
 import CTA from "../components/CTA.astro";
+
+const lanes = [
+  { title: "First Set Stories", text: "Short stories about preparing for a first public set, what went right, what felt hard, and what the DJ learned." },
+  { title: "Practice Clips", text: "Approved public links to clean practice clips, routines, scratches, transitions, and short mixes with staff-written context." },
+  { title: "Gear Decisions", text: "Practical notes about controllers, headphones, crates, cables, speakers, cases, and what can wait until later." },
+  { title: "Community Features", text: "Youth-DJ movements, workshops, camps, competitions, events, and local scenes supported by public sources." }
+];
 ---
 
-<BaseLayout title="Spotlight" description="Support Youth DJs spotlights youth DJ profiles, videos, interviews, practice clips, gear notes, and performance stories with parent approval.">
-  <section class="page-head">
-    <div class="page-head-inner">
-      <p class="stamp">Spotlight</p>
-      <h1>Young DJs on the Rise</h1>
-      <p class="lead">Profiles, videos, interviews, practice clips, gear notes, and performance stories, published only with the right approval.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-inner">
-      <div class="grid">
-        <YouthProfileCard name="Feature Profile" detail="Approved youth DJ story with name, city, style, first setup, and what they are practicing now." note="Parent/legal guardian approval required before public features." />
-        <YouthProfileCard name="Practice Clip" detail="Short-form video space for clean practice clips, blends, routines, scratches, and crowd-safe edits." note="Youth DJs under 13 require direct parent/legal guardian involvement." />
-        <YouthProfileCard name="Gear Notes" detail="Beginner-friendly notes on controllers, headphones, crates, laptop setup, software, and practice habits." note="Gear links may include affiliate links when approved." />
-      </div>
-      <CTA title="Submit for Consideration" text="Youth DJs 13+ may be submitted for spotlight consideration. Minors require parent/legal guardian consent before public features." href="/submit/" label="Start Submission" />
-    </div>
-  </section>
+<BaseLayout title="Spotlight" description="Editorial youth DJ stories, public performance notes, gear decisions, interviews, and community stories.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Spotlight</p><h1>Stories from the culture.</h1><p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ may join the directory without receiving a Spotlight feature.</p></div></section>
+  <section class="section"><div class="section-inner"><div class="grid">{lanes.map((lane, index) => <article class:list={["panel", index === 0 ? "red" : ""]}><h3>{lane.title}</h3><p>{lane.text}</p></article>)}</div><CTA title="Join the Directory" text="Directory submission does not require a Spotlight feature. Eligible DJs can submit approved public links for moderation." href="/submit/" label="Join" /></div></section>
 </BaseLayout>
