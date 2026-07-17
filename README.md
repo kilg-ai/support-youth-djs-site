@@ -1,6 +1,6 @@
 # Support Youth DJs Site
 
-Standalone Astro static site for the Support Youth DJs community campaign operated by Ryan the 1 LLC.
+Standalone Astro static site for the Support Youth DJs shared platform for youth DJ culture, operated by Ryan the 1 LLC.
 
 This project is separate from 19U Roster and should not be merged into the 19U repo.
 
