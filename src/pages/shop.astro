@@ -4,15 +4,15 @@ import CTA from "../components/CTA.astro";
 
 const merchNotes = [
   { title: "Secondary to the Platform", text: "Merchandise supports the message, but the platform remains focused on directory participation, youth DJ culture, learning, resources, and public work." },
-  { title: "No Checkout Active", text: "There is no active public checkout on this page. No purchase action is available until product and policy details are approved." },
-  { title: "Product Purchase", text: "When merchandise is approved, purchases will be product purchases, not donations or promises of placement, coverage, or outcomes." }
+  { title: "No Checkout Active", text: "There is no active public checkout on this page and no purchase action is available." },
+  { title: "Product Purchase", text: "If merchandise is approved later, purchases will be product purchases, not donations or promises of placement, coverage, or outcomes." }
 ];
 ---
 
-<BaseLayout title="Official Merch" description="Support Youth DJs merchandise information with no active checkout until product and policy details are approved.">
-  <section class="page-head"><div class="page-head-inner"><p class="stamp">Official Merch</p><h1>Wear the message.</h1><p class="lead">Support Youth DJs merchandise is secondary to the directory, culture, and knowledge platform. The first T-shirt concept is being prepared, but checkout is not active.</p></div></section>
+<BaseLayout title="Official Merch" description="Support Youth DJs merchandise information with no active checkout.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Official Merch</p><h1>Wear the message.</h1><p class="lead">Support Youth DJs merchandise is secondary to the directory, culture, and knowledge platform. This page is informational only and checkout is not active.</p></div></section>
   <section class="section"><div class="section-inner">
-    <div class="shop-board"><div><p class="kicker">Support Youth DJs</p><h2>T-shirt information</h2><p>The merchandise page is informational only until the owner approves product details, fulfillment, policies, and checkout.</p></div><div class="shirt-mark" aria-hidden="true"><span>Support</span><span>Youth</span><span>DJs</span></div></div>
+    <div class="shop-board"><div><p class="kicker">Support Youth DJs</p><h2>T-shirt information</h2><p>The T-shirt concept supports the message without changing the platform focus or creating a purchase option on this page.</p></div><div class="shirt-mark" aria-hidden="true"><span>Support</span><span>Youth</span><span>DJs</span></div></div>
     <div class="grid merch-grid">{merchNotes.map((item) => <article class="panel"><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
     <CTA title="Questions About Merch" text="Use the shop email for merchandise questions. Use the main contact email for directory, editorial, parent, profile correction, resource, or contributor questions." href="/contact/" label="Contact" />
   </div></section>
