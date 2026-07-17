@@ -23,7 +23,6 @@ const learningTopics = [
 <BaseLayout title={site.name} description="Support Youth DJs helps people find youth DJs by city and state, follow their public work, and learn from DJ culture.">
   <section class="hero">
     <div class="hero-inner">
-      <img class="hero-logo" src="/assets/support-youth-djs-logo-white.png" alt="Support Youth DJs. The Culture. The Future." />
       <p class="stamp">Youth DJ Directory</p>
       <h1>Support Youth DJs</h1>
       <p class="lead">Find youth DJs by city and state. Follow their work, learn from the culture, and support what they do next.</p>
@@ -53,64 +52,19 @@ const learningTopics = [
     <div class="section-inner">
       <p class="stamp">Directory Status</p>
       <h2>Founding profiles are being reviewed.</h2>
-      <article class="panel red">
-        <h3>No public profiles yet</h3>
-        <p>The first directory profiles will appear after the DJ or parent/legal guardian submits public links and the profile is reviewed for publication.</p>
-      </article>
+      <article class="panel red"><h3>No public profiles yet</h3><p>The first directory profiles will appear after the DJ or parent/legal guardian submits public links and the profile is reviewed for publication.</p></article>
       <CTA title="Join the Directory" text="DJs ages 13-17 may initiate a directory submission. Profiles for DJs under 13 must be submitted and managed by a parent or legal guardian." href="/submit/" label="Start" />
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Latest Question</p>
-      <h2>What should a new DJ practice first?</h2>
-      <p class="lead">Start with clean transitions, music organization, and recording short practice sets. Fancy tricks make more sense after the basics sound steady.</p>
-      <div class="actions">
-        <a class="button" href="/questions/">Read Q&A</a>
-        <a class="button" href="/learn/">Learning Topics</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Learn</p>
-      <h2>Practical topics for DJs.</h2>
-      <FeatureGrid items={learningTopics} />
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Spotlight</p>
-      <h2>Stories from the culture.</h2>
-      <p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ can join the directory without receiving a feature.</p>
-      <CTA title="Explore Spotlight" text="Spotlight can feature public DJ work, first-set stories, gear decisions, program features, and lessons learned without becoming a booking or opportunity system." href="/spotlight/" label="Spotlight" />
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Official Merch</p>
-      <h2>Wear the message. Support Youth DJs.</h2>
-      <p class="lead">T-shirt promotion is prepared, but checkout stays inactive until product, pricing, fulfillment, tax, refund, and checkout details are audited and approved.</p>
-      <a class="button" href="/shop/">Merch Info</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Parents</p>
-      <h2>Public links, consent, and moderation.</h2>
-      <p class="lead">Private personal contact information is not published. Public profiles use approved links only, and every submission is reviewed before publication.</p>
-      <CTA title="Support the Culture" text="Find youth DJs, follow their public work, invite eligible DJs to join, and help the directory grow with care." href="/djs/" label="Find Youth DJs" />
-    </div>
-  </section>
+  <section class="section"><div class="section-inner"><p class="stamp">Latest Question</p><h2>What should a new DJ practice first?</h2><p class="lead">Start with clean transitions, music organization, and recording short practice sets. Fancy tricks make more sense after the basics sound steady.</p><div class="actions"><a class="button" href="/questions/">Read Q&A</a><a class="button" href="/learn/">Learning Topics</a></div></div></section>
+  <section class="section"><div class="section-inner"><p class="stamp">Learn</p><h2>Practical topics for DJs.</h2><FeatureGrid items={learningTopics} /></div></section>
+  <section class="section"><div class="section-inner"><p class="stamp">Spotlight</p><h2>Stories from the culture.</h2><p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ can join the directory without receiving a feature.</p><CTA title="Explore Spotlight" text="Spotlight can feature public DJ work, first-set stories, gear decisions, program features, and lessons learned without becoming a booking or opportunity system." href="/spotlight/" label="Spotlight" /></div></section>
+  <section class="section"><div class="section-inner"><p class="stamp">Official Merch</p><h2>Wear the message. Support Youth DJs.</h2><p class="lead">T-shirt promotion is prepared, but checkout stays inactive until product, pricing, fulfillment, tax, refund, and checkout details are audited and approved.</p><a class="button" href="/shop/">Merch Info</a></div></section>
+  <section class="section"><div class="section-inner"><p class="stamp">Parents</p><h2>Public links, consent, and moderation.</h2><p class="lead">Private personal contact information is not published. Public profiles use approved links only, and every submission is reviewed before publication.</p><CTA title="Support the Culture" text="Find youth DJs, follow their public work, invite eligible DJs to join, and help the directory grow with care." href="/djs/" label="Find Youth DJs" /></div></section>
 </BaseLayout>
 
 <style>
-  .hero-logo { display: block; height: auto; margin-bottom: 28px; max-width: min(520px, 86vw); width: 100%; }
   .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
   .filter-row span { border: 2px solid var(--ink); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-weight: 800; padding: 12px 14px; text-transform: uppercase; }
 </style>
