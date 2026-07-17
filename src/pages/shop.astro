@@ -1,85 +1,66 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
-import FeatureGrid from "../components/FeatureGrid.astro";
 
-const products = [
-  { title: "Statement Tees", text: "Bold Support Youth DJs shirts built around the campaign mark and The Culture. The Future. line." },
-  { title: "Wristbands", text: "Simple, low-cost campaign items for families, supporters, students, and local events." },
-  { title: "Affiliate Gear", text: "Future gear links for starter controllers, headphones, cases, cables, and practice tools." }
+const auditItems = [
+  "Product data",
+  "Images",
+  "Pricing",
+  "Sizes and variants",
+  "Inventory or fulfillment",
+  "Shipping",
+  "Taxes",
+  "Return and refund policy",
+  "Checkout security",
+  "Analytics"
 ];
 ---
 
-<BaseLayout title="Shop" description="Shop Support Youth DJs campaign merch and future affiliate gear picks.">
+<BaseLayout title="Official Merch" description="Official Support Youth DJs merchandise information with checkout inactive until commerce is audited and approved.">
   <section class="page-head">
     <div class="page-head-inner">
-      <p class="stamp">Shop</p>
-      <h1>Wear the Culture</h1>
-      <p class="lead">Merch gives supporters a simple way to back youth DJ culture while keeping the campaign independent and easy to grow.</p>
+      <p class="stamp">Official Merch</p>
+      <h1>Wear the message.</h1>
+      <p class="lead">Support Youth DJs T-shirt promotion is being prepared. Checkout is inactive until product, fulfillment, policy, and checkout details are audited and approved.</p>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
-      <FeatureGrid items={products} />
       <div class="shop-board">
-        <article class="drop-card">
-          <div class="drop-mark">SYD</div>
-          <div>
-            <p class="kicker">First Drop Concept</p>
-            <h2>Logo Tee + Wristband Pack</h2>
-            <p>Use this space for the first external checkout link when products, pricing, shipping, and refund terms are ready.</p>
-          </div>
-        </article>
-        <article class="panel">
-          <h3>Affiliate Disclosure</h3>
-          <p>Some links may be affiliate links. We may earn a commission if you purchase through those links, at no extra cost to you.</p>
-        </article>
+        <div>
+          <p class="kicker">Product purchase, not a donation.</p>
+          <h2>Support Youth DJs T-shirt</h2>
+          <p>No public checkout link is active in Phase 1. Merchandise should support the mission without becoming the main identity of the platform.</p>
+        </div>
+        <img src="/assets/support-youth-djs-logo.png" alt="Support Youth DJs logo" />
       </div>
-      <CTA title="Shop Setup" text="External checkout links can be added after products, payment flow, shipping terms, and refund language are approved." href="/contact/" label="Ask About Shop" />
+      <ul class="list">
+        {auditItems.map((item) => <li>{item} must be confirmed before Phase 2 commerce activation.</li>)}
+      </ul>
+      <CTA title="Phase 2 Required" text="Do not activate T-shirt checkout until the commerce audit is reviewed and approved by the owner." href="/resources/" label="Resources" />
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .shop-board {
-    display: grid;
-    gap: 18px;
-    margin-top: 28px;
-  }
-
-  .drop-card {
     align-items: center;
     background: var(--paper);
-    border: 3px solid var(--ink);
-    color: #050505;
+    color: var(--bg);
     display: grid;
     gap: 22px;
-    padding: clamp(20px, 5vw, 36px);
+    padding: clamp(22px, 5vw, 48px);
   }
 
-  .drop-card p { color: #151515; }
-  .drop-card .kicker { color: var(--accent); }
+  .shop-board p { color: #171717; }
 
-  .drop-mark {
-    align-items: center;
-    aspect-ratio: 1;
-    background: #050505;
-    border: 10px solid var(--accent);
-    color: var(--paper);
-    display: grid;
-    font-size: clamp(4rem, 20vw, 10rem);
-    justify-items: center;
-    line-height: 1;
-    margin: 0 auto;
-    max-width: 360px;
-    text-align: center;
-    transform: rotate(-2deg);
+  .shop-board img {
+    justify-self: center;
+    max-width: min(360px, 78vw);
     width: 100%;
   }
 
   @media (min-width: 820px) {
-    .drop-card {
-      grid-template-columns: 0.9fr 1.1fr;
-    }
+    .shop-board { grid-template-columns: 1fr 320px; }
   }
 </style>
