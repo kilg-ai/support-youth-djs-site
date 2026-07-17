@@ -4,67 +4,67 @@ import CTA from "../components/CTA.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 import { site } from "../data/site";
 
-const directoryFilters = ["City", "State", "Genre", "Age Range", "Recently Added"];
+const participation = [
+  { title: "Join the directory", text: "Add to a growing record of youth DJ culture with public links, city and state, genres, mixes, videos, and related stories." },
+  { title: "Share public work", text: "Profiles can connect to public sets, social links, mixes, videos, questions, learning topics, and related resources after review." },
+  { title: "Contribute to the culture", text: "Youth DJs, experienced contributors, programs, and supporters can help build a stronger network around youth DJ culture." }
+];
 
-const launchMarkets = [
-  { title: "Charlotte", text: "First launch market. Approved youth DJ profiles will appear after submission review." },
-  { title: "North Carolina", text: "State browsing will expand as eligible DJs submit public links." },
-  { title: "Southeast", text: "Regional coverage can grow through approved profiles, programs, and resources." }
+const experience = [
+  { title: "Real DJ experience", text: "Practical knowledge can come from bookings, equipment decisions, performance, music preparation, client communication, pricing, mistakes, and recovery." },
+  { title: "Questions and perspectives", text: "The platform can connect questions, answers, interviews, related profiles, genres, cities, states, and learning topics." },
+  { title: "Youth-specific realities", text: "Content can document different paths into DJing, family boundaries, school schedules, competition, community, and continuing development." }
 ];
 
 const learningTopics = [
-  { title: "Start DJing", text: "Music organization, headphones, controller basics, clean practice habits, and a realistic setup plan." },
-  { title: "Practice Better", text: "Short practice blocks for transitions, cue points, scratches, drops, and recording sets for review." },
-  { title: "Choose Equipment", text: "Controllers, headphones, speakers, stands, cases, cables, and software explained by need instead of hype." },
-  { title: "Build a Brand", text: "Public DJ name, profile links, videos, mixes, photos, and how to show progress without overselling." }
+  { title: "Performance", text: "Crowd reading, set preparation, transitions, clean edits, setup checks, and recovering when something goes wrong." },
+  { title: "Music Preparation", text: "Crates, clean versions, energy levels, backups, event notes, and the habits that make public sets stronger." },
+  { title: "Business Basics", text: "Client communication, pricing questions, marketing, expectations, parent involvement, and professional boundaries." },
+  { title: "Equipment", text: "Controllers, headphones, speakers, cases, cables, software, upgrades, and what can wait until later." }
+];
+
+const cultureLinks = [
+  { title: "Youth DJ programs", text: "Space for programs, workshops, educators, local scenes, and movements supported by public information." },
+  { title: "Community resources", text: "Resources can point to people doing the work without implying formal partnership, certification, or endorsement." },
+  { title: "Advocacy foundation", text: "We create space for youth DJs to be heard, identify shared needs, and advocate from what the culture tells us." }
 ];
 ---
 
-<BaseLayout title={site.name} description="Support Youth DJs helps people find youth DJs by city and state, follow their public work, and learn from DJ culture.">
+<BaseLayout title={site.name} description="Support Youth DJs is building a shared platform for youth DJ culture.">
   <section class="hero">
     <div class="hero-inner">
-      <p class="stamp">Youth DJ Directory</p>
+      <p class="stamp">The Culture. The Future.</p>
       <h1>Support Youth DJs</h1>
-      <p class="lead">Find youth DJs by city and state. Follow their work, learn from the culture, and support what they do next.</p>
-      <p class="kicker">The Culture. The Future.</p>
+      <p class="lead">Support Youth DJs is building a shared platform for youth DJ culture.</p>
+      <p class="kicker">Join the directory. Share public work. Learn from real DJ experience. Explore youth DJ culture. Contribute to the culture.</p>
       <div class="actions">
-        <a class="button primary" href="/djs/">Find Youth DJs</a>
-        <a class="button" href="/submit/">Join the Directory</a>
+        <a class="button primary" href="/submit/">Join the Directory</a>
+        <a class="button" href="/djs/">Directory</a>
         <a class="button" href="/learn/">Learn</a>
         <a class="button" href="/spotlight/">Explore Spotlight</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Find DJs</p>
-      <h2>Charlotte first. Built to expand.</h2>
-      <p class="lead">The directory is for DJs under 18. Visitors use approved public links to watch, listen, follow, or visit each DJ's public profile.</p>
-      <div class="filter-row" aria-label="Directory filters">
-        {directoryFilters.map((item) => <span>{item}</span>)}
-      </div>
-      <FeatureGrid items={launchMarkets} />
-    </div>
-  </section>
+  <section class="section"><div class="section-inner"><p class="stamp">Join</p><h2>Join a growing record of youth DJ culture.</h2><p class="lead">The directory is participation first. Discovery is one benefit of adding approved public work, city and state, genres, related questions, stories, learning topics, and resources.</p><FeatureGrid items={participation} /><CTA title="Directory Intake" text="DJs ages 13-17 may initiate submissions. DJs under 13 require parent or legal guardian submission. All submissions are links-only and reviewed before publication." href="/submit/" label="Join" /></div></section>
 
-  <section class="section">
-    <div class="section-inner">
-      <p class="stamp">Directory Status</p>
-      <h2>Founding profiles are being reviewed.</h2>
-      <article class="panel red"><h3>No public profiles yet</h3><p>The first directory profiles will appear after the DJ or parent/legal guardian submits public links and the profile is reviewed for publication.</p></article>
-      <CTA title="Join the Directory" text="DJs ages 13-17 may initiate a directory submission. Profiles for DJs under 13 must be submitted and managed by a parent or legal guardian." href="/submit/" label="Start" />
-    </div>
-  </section>
+  <section class="section"><div class="section-inner"><p class="stamp">Profiles</p><h2>Featured youth DJs will connect across the platform.</h2><article class="panel red"><h3>Founding profiles are being reviewed</h3><p>Published profiles can connect to public sets, mixes, videos, social links, questions, Spotlight stories, learning topics, city or state pages, genres, programs, resources, and other relevant youth DJs.</p></article></div></section>
 
-  <section class="section"><div class="section-inner"><p class="stamp">Latest Question</p><h2>What should a new DJ practice first?</h2><p class="lead">Start with clean transitions, music organization, and recording short practice sets. Fancy tricks make more sense after the basics sound steady.</p><div class="actions"><a class="button" href="/questions/">Read Q&A</a><a class="button" href="/learn/">Learning Topics</a></div></div></section>
-  <section class="section"><div class="section-inner"><p class="stamp">Learn</p><h2>Practical topics for DJs.</h2><FeatureGrid items={learningTopics} /></div></section>
-  <section class="section"><div class="section-inner"><p class="stamp">Spotlight</p><h2>Stories from the culture.</h2><p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ can join the directory without receiving a feature.</p><CTA title="Explore Spotlight" text="Spotlight can feature public DJ work, first-set stories, gear decisions, program features, and lessons learned without becoming a booking or opportunity system." href="/spotlight/" label="Spotlight" /></div></section>
-  <section class="section"><div class="section-inner"><p class="stamp">Official Merch</p><h2>Wear the message. Support Youth DJs.</h2><p class="lead">T-shirt promotion is prepared, but checkout stays inactive until product, pricing, fulfillment, tax, refund, and checkout details are audited and approved.</p><a class="button" href="/shop/">Merch Info</a></div></section>
-  <section class="section"><div class="section-inner"><p class="stamp">Parents</p><h2>Public links, consent, and moderation.</h2><p class="lead">Private personal contact information is not published. Public profiles use approved links only, and every submission is reviewed before publication.</p><CTA title="Support the Culture" text="Find youth DJs, follow their public work, invite eligible DJs to join, and help the directory grow with care." href="/djs/" label="Find Youth DJs" /></div></section>
+  <section class="section"><div class="section-inner"><p class="stamp">Experience</p><h2>Real DJ experience belongs in the knowledge base.</h2><FeatureGrid items={experience} /></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Questions</p><h2>Questions and perspectives connect the culture.</h2><p class="lead">Editorial questions can connect youth DJs, experienced contributors, genres, cities, equipment choices, mistakes, recovery, business realities, and practical learning.</p><div class="actions"><a class="button" href="/questions/">Questions & Answers</a><a class="button" href="/learn/">Learning Topics</a></div></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Learn</p><h2>Practical DJ knowledge.</h2><FeatureGrid items={learningTopics} /></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Spotlight</p><h2>Profiles, public work, and stories.</h2><p class="lead">Spotlight is editorial and separate from directory eligibility. It can connect public work, lessons learned, related questions, learning topics, resources, and youth DJ movements.</p><CTA title="Explore Spotlight" text="Spotlight can document public sets, interviews, equipment decisions, booking experiences, mistakes, recovery, community, and different paths into DJing." href="/spotlight/" label="Spotlight" /></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Culture</p><h2>Programs, movements, scenes, and resources.</h2><FeatureGrid items={cultureLinks} /></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Resources</p><h2>Connected resources for youth DJ culture.</h2><p class="lead">Resources can connect to learning topics, profiles, Spotlight stories, programs, genres, contributors, cities, states, and repeated needs from the culture.</p><a class="button" href="/resources/">Resources</a></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Advocacy</p><h2>Advocacy starts with listening.</h2><p class="lead">We create space for youth DJs to be heard, identify shared needs, and advocate from what the culture tells us. Support Youth DJs does not claim to represent all youth DJs.</p></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Official Merch</p><h2>Wear the message. Support Youth DJs.</h2><p class="lead">T-shirt promotion stays secondary while the platform remains directory, culture, and knowledge first. Checkout remains inactive until commerce is audited and approved.</p><a class="button" href="/shop/">Merch Info</a></div></section>
+
+  <section class="section"><div class="section-inner"><p class="stamp">Mission</p><h2>Support Youth DJs.</h2><p class="lead">The Culture. The Future. Building a stronger network around youth DJ culture.</p><CTA title="Contribute to the Culture" text="Join the directory, share public work, learn from real experience, point us toward programs, and help document what youth DJs are building." href="/submit/" label="Join the Directory" /></div></section>
 </BaseLayout>
-
-<style>
-  .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
-  .filter-row span { border: 2px solid var(--ink); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-weight: 800; padding: 12px 14px; text-transform: uppercase; }
-</style>
