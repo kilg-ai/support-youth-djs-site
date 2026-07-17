@@ -1,36 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
+
+const focusOptions = ["Learning the basics", "Practicing transitions", "Organizing music", "Preparing to play in public", "Improving crowd interaction", "Improving performance", "Upgrading equipment", "Building a brand", "Learning production", "Sharing knowledge"];
 ---
 
-<BaseLayout title="Submit" description="Submission information for youth DJs 13+ with parent or legal guardian consent requirements.">
-  <section class="page-head">
-    <div class="page-head-inner">
-      <p class="stamp">Submit</p>
-      <h1>Submit a Youth DJ</h1>
-      <p class="lead">Youth DJs 13+ may be submitted for spotlight consideration. The submission path is built around parent approval, clean content, and clear expectations.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-inner">
-      <h2>Consent First</h2>
-      <ul class="list">
-        <li>Minors require parent/legal guardian consent before public features.</li>
-        <li>Youth DJs under 13 require direct parent/legal guardian involvement in submission, video, and approval.</li>
-        <li>Submissions are reviewed for fit, safety, and approval before anything is public.</li>
-        <li>Features, submissions, or purchases do not guarantee bookings, sponsorships, media coverage, or career outcomes.</li>
-      </ul>
-      <div class="grid submit-grid">
-        <article class="panel red">
-          <h3>What to Prepare</h3>
-          <p>Youth DJ name, age, city, parent/legal guardian contact, clean video links, short bio, and permission to review.</p>
-        </article>
-        <article class="panel">
-          <h3>What Happens Next</h3>
-          <p>Submissions are reviewed before public use. Parent approval is required before any profile, clip, or story goes live.</p>
-        </article>
-      </div>
-      <CTA title="Submission Form Coming Next" text="A form link can be added after privacy language, consent fields, and review steps are finalized." href="/parents/" label="Parent Info" />
-    </div>
-  </section>
+<BaseLayout title="Join the Directory" description="Join the Support Youth DJs directory with link-based submissions, age rules, consent, and moderation.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Join the Directory</p><h1>Submit public DJ links.</h1><p class="lead">The directory is exclusively for DJs under 18. All submitted public material must be URL-based and reviewed before publication.</p></div></section>
+  <section class="section"><div class="section-inner">
+    <h2>Who is submitting this DJ profile?</h2>
+    <div class="grid"><article class="panel red"><h3>I am a DJ age 13-17.</h3><p>DJs ages 13-17 may initiate their own directory submission using public links and a private administrative email.</p></article><article class="panel"><h3>I am a parent or legal guardian.</h3><p>Profiles for DJs under 13 must be initiated and managed by a parent or legal guardian.</p></article><article class="panel"><h3>Age 18 or older?</h3><p>The directory is exclusively for DJs under 18. Adult DJs are welcome to use learning resources and contribute through interviews, advice, and public resources.</p></article></div>
+    <h2>Submission Rules</h2>
+    <ul class="list"><li>No file uploads. Submit public URLs only.</li><li>No private phone numbers, private emails, home addresses, schools, exact birth dates, or private schedules are published.</li><li>Visitors contact or follow DJs only through the public links selected for the profile.</li><li>Every submission enters moderation before publication.</li></ul>
+    <h2>Current Focus Options</h2>
+    <div class="filter-row">{focusOptions.map((item) => <span>{item}</span>)}</div>
+    <CTA title="Directory Intake" text="Use the contact email while the moderated intake form is being finalized. Send public links only and do not include private personal information." href="/contact/" label="Contact" />
+  </div></section>
 </BaseLayout>
+
+<style>.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.filter-row span{border:2px solid var(--ink);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-weight:800;padding:12px 14px;text-transform:uppercase}</style>
