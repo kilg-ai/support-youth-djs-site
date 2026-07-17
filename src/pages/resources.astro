@@ -3,20 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 
 const resources = [
-  { title: "Start DJing", text: "Resource collections will include public URLs, staff notes, affiliate disclosure when needed, and last-reviewed dates." },
-  { title: "Practice Better", text: "Practical guidance for transitions, clean versions, recording practice, and building repeatable habits." },
-  { title: "Choose Equipment", text: "Recommendations stay contextual. Affiliate revenue does not determine editorial recommendations." }
+  { title: "Practical tools", text: "Resources can connect to bookings, equipment, performance, music preparation, marketing, pricing, technical problems, and recovery." },
+  { title: "Related content", text: "Resources should connect back to DJ profiles, Spotlight articles, questions, answers, learning topics, genres, cities, states, and contributors." },
+  { title: "Editorial standards", text: "Recommendations stay contextual. Affiliate revenue does not determine editorial recommendations." }
 ];
 
 const programs = [
-  { title: "Youth DJ programs and workshops", text: "Legitimate programs, workshops, camps, competitions, and community events can be reviewed for inclusion." },
-  { title: "Music education groups", text: "Programs that help young people learn DJing, production, music business, performance, or event skills can be listed with public URLs." },
-  { title: "Community DJ movements", text: "Support Youth DJs can point to other movements without implying sponsorship, endorsement, verification, or formal affiliation." }
+  { title: "Youth DJ movements", text: "Space for legitimate movements, programs, workshops, camps, competitions, community events, and local scenes." },
+  { title: "Educators and contributors", text: "DJ educators and experienced contributors can be recognized through public resources, interviews, advice, and related learning content." },
+  { title: "Advocacy topics", text: "Repeated themes from published experiences, questions, interviews, and public resources can become a foundation for future advocacy." }
 ];
 ---
 
-<BaseLayout title="Resources" description="Curated DJ resources, recommendations, and youth DJ movements for Support Youth DJs.">
-  <section class="page-head"><div class="page-head-inner"><p class="stamp">Resources</p><h1>Tools, programs, and recommendations.</h1><p class="lead">Resources are contextual, reviewed, and centered on helping DJs make better decisions without pushing unnecessary purchases.</p></div></section>
+<BaseLayout title="Resources" description="Connected resources, programs, movements, contributors, and advocacy topics for youth DJ culture.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Resources</p><h1>Resources connected to the culture.</h1><p class="lead">Resources support the directory, learning content, Spotlight, questions, profiles, programs, contributors, local scenes, cultural history, and advocacy topics.</p></div></section>
   <section class="section"><div class="section-inner"><h2>DJ Resource Topics</h2><FeatureGrid items={resources} /></div></section>
   <section class="section"><div class="section-inner"><h2>Youth DJ Movements and Programs</h2><p class="lead">Entries point to public URLs and do not imply partnership, sponsorship, verification, endorsement, legal review, safety certification, or formal affiliation unless approved.</p><FeatureGrid items={programs} /></div></section>
 </BaseLayout>
