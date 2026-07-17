@@ -1,21 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
 
-const focusOptions = ["Learning the basics", "Practicing transitions", "Organizing music", "Preparing to play in public", "Improving crowd interaction", "Improving performance", "Upgrading equipment", "Building a brand", "Learning production", "Sharing knowledge"];
+const workflow = [
+  { title: "1. Check eligibility", text: "The directory is for DJs under 18. Ages 13-17 may initiate their own directory submission. DJs under 13 require a parent or legal guardian to submit." },
+  { title: "2. Send public links", text: "Submit public URLs only, such as mixes, public videos, social profiles, official pages, or other public work selected for review." },
+  { title: "3. Editorial review", text: "A submitted profile is reviewed before anything is published. Directory participation is separate from Spotlight or editorial features." },
+  { title: "4. Correction or removal", text: "Published directory information can be corrected or removed by contacting the platform with the profile details." }
+];
+
+const rules = [
+  "Directory participation is separate from Spotlight consideration.",
+  "DJs ages 13-17 may initiate submissions using public links.",
+  "DJs under 13 require parent or legal guardian submission.",
+  "Adults are not eligible for directory profiles.",
+  "Public URLs only. No uploads are accepted.",
+  "No automatic publication. Every profile is reviewed first.",
+  "Private phone numbers, private emails, home addresses, schools, exact birth dates, and private schedules are not published."
+];
 ---
 
-<BaseLayout title="Join the Directory" description="Join the Support Youth DJs directory with link-based submissions, age rules, consent, and moderation.">
-  <section class="page-head"><div class="page-head-inner"><p class="stamp">Join the Directory</p><h1>Submit public DJ links.</h1><p class="lead">The directory is exclusively for DJs under 18. All submitted public material must be URL-based and reviewed before publication.</p></div></section>
+<BaseLayout title="Join the Directory" description="Join the Support Youth DJs directory with public-link submissions, age routing, moderation, and correction or removal options.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Join the Directory</p><h1>Join a growing record of youth DJ culture.</h1><p class="lead">The directory is for youth DJs under 18 who want approved public work, city and state, genres, and related culture links reviewed for possible publication.</p></div></section>
   <section class="section"><div class="section-inner">
-    <h2>Who is submitting this DJ profile?</h2>
-    <div class="grid"><article class="panel red"><h3>I am a DJ age 13-17.</h3><p>DJs ages 13-17 may initiate their own directory submission using public links and a private administrative email.</p></article><article class="panel"><h3>I am a parent or legal guardian.</h3><p>Profiles for DJs under 13 must be initiated and managed by a parent or legal guardian.</p></article><article class="panel"><h3>Age 18 or older?</h3><p>The directory is exclusively for DJs under 18. Adult DJs are welcome to use learning resources and contribute through interviews, advice, and public resources.</p></article></div>
-    <h2>Submission Rules</h2>
-    <ul class="list"><li>No file uploads. Submit public URLs only.</li><li>No private phone numbers, private emails, home addresses, schools, exact birth dates, or private schedules are published.</li><li>Visitors contact or follow DJs only through the public links selected for the profile.</li><li>Every submission enters moderation before publication.</li></ul>
-    <h2>Current Focus Options</h2>
-    <div class="filter-row">{focusOptions.map((item) => <span>{item}</span>)}</div>
-    <CTA title="Directory Intake" text="Use the contact email while the moderated intake form is being finalized. Send public links only and do not include private personal information." href="/contact/" label="Contact" />
+    <h2>Directory Workflow</h2>
+    <FeatureGrid items={workflow} />
+    <h2>Rules Before You Send Links</h2>
+    <ul class="list">{rules.map((item) => <li>{item}</li>)}</ul>
+    <CTA title="Start With Contact" text="While the moderated intake form is being finalized, use the contact email for directory help. Send public links only and do not include private personal information." href="/contact/" label="Contact" />
   </div></section>
 </BaseLayout>
-
-<style>.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.filter-row span{border:2px solid var(--ink);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-weight:800;padding:12px 14px;text-transform:uppercase}</style>
