@@ -4,77 +4,113 @@ import CTA from "../components/CTA.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 import { site } from "../data/site";
 
-const features = [
-  { title: "Merch That Moves", text: "T-shirts, wristbands, and drops built around the sound, style, and grind of young DJs." },
-  { title: "Approved Stories", text: "Parent-aware spotlights for youth DJs, practice clips, gear notes, interviews, and local scenes." },
-  { title: "Affiliate Gear", text: "Future gear picks can earn affiliate revenue while pointing families toward useful starter tools." }
+const directoryFilters = ["City", "State", "Genre", "Age Range", "Recently Added"];
+
+const launchMarkets = [
+  { title: "Charlotte", text: "First launch market. Approved youth DJ profiles will appear after submission review." },
+  { title: "North Carolina", text: "State browsing will expand as eligible DJs submit public links." },
+  { title: "Southeast", text: "Regional coverage can grow through approved profiles, programs, and resources." }
 ];
 
-const lanes = [
-  "Feature youth DJs with parent/legal guardian approval.",
-  "Sell campaign merch without calling purchases donations.",
-  "Build partner and affiliate revenue without promising outcomes.",
-  "Keep the culture sharp, safe, and youth-forward."
+const learningTopics = [
+  { title: "Start DJing", text: "Music organization, headphones, controller basics, clean practice habits, and a realistic setup plan." },
+  { title: "Practice Better", text: "Short practice blocks for transitions, cue points, scratches, drops, and recording sets for review." },
+  { title: "Choose Equipment", text: "Controllers, headphones, speakers, stands, cases, cables, and software explained by need instead of hype." },
+  { title: "Build a Brand", text: "Public DJ name, profile links, videos, mixes, photos, and how to show progress without overselling." }
 ];
 ---
 
-<BaseLayout title={site.name} description="Support Youth DJs is a Ryan the 1 LLC community campaign for merch, stories, and support for the next generation of DJs.">
+<BaseLayout title={site.name} description="Support Youth DJs helps people find youth DJs by city and state, follow their public work, and learn from DJ culture.">
   <section class="hero">
     <div class="hero-inner">
-      <p class="stamp">Community Campaign</p>
+      <img class="hero-logo" src="/assets/support-youth-djs-logo-white.png" alt="Support Youth DJs. The Culture. The Future." />
+      <p class="stamp">Youth DJ Directory</p>
       <h1>Support Youth DJs</h1>
-      <p class="lead">Merch, stories, and support for the next generation of DJs.</p>
-      <p class="kicker">The Culture. The Future. Operated by Ryan the 1 LLC.</p>
+      <p class="lead">Find youth DJs by city and state. Follow their work, learn from the culture, and support what they do next.</p>
+      <p class="kicker">The Culture. The Future.</p>
       <div class="actions">
-        <a class="button primary" href="/shop/">Shop Campaign Merch</a>
-        <a class="button" href="/submit/">Submit a Youth DJ</a>
-        <a class="button" href="/partners/">Partner With Us</a>
+        <a class="button primary" href="/djs/">Find Youth DJs</a>
+        <a class="button" href="/submit/">Join the Directory</a>
+        <a class="button" href="/learn/">Learn</a>
+        <a class="button" href="/spotlight/">Explore Spotlight</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section-inner">
-      <h2>The Culture. The Future.</h2>
-      <p class="lead">Support Youth DJs is a Ryan the 1 LLC campaign built to spotlight young DJs, sell campaign merch, and create a clean path for families, partners, and supporters to participate.</p>
-      <FeatureGrid items={features} />
-      <ul class="list">
-        {lanes.map((item) => <li>{item}</li>)}
-      </ul>
-      <CTA title="Youth DJ Spotlight" text="Youth DJs 13+ may be submitted for spotlight consideration. Minors require parent/legal guardian consent before public features." href="/spotlight/" label="View Spotlight" />
+      <p class="stamp">Find DJs</p>
+      <h2>Charlotte first. Built to expand.</h2>
+      <p class="lead">The directory is for DJs under 18. Visitors use approved public links to watch, listen, follow, or visit each DJ's public profile.</p>
+      <div class="filter-row" aria-label="Directory filters">
+        {directoryFilters.map((item) => <span>{item}</span>)}
+      </div>
+      <FeatureGrid items={launchMarkets} />
     </div>
   </section>
 
-  <section class="section split-section">
-    <div class="section-inner split">
-      <article>
-        <p class="stamp">Revenue Paths</p>
-        <h2>Merch first. Affiliate smart. Culture always.</h2>
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Directory Status</p>
+      <h2>Founding profiles are being reviewed.</h2>
+      <article class="panel red">
+        <h3>No public profiles yet</h3>
+        <p>The first directory profiles will appear after the DJ or parent/legal guardian submits public links and the profile is reviewed for publication.</p>
       </article>
-      <div class="grid">
-        <article class="panel red">
-          <h3>Shop Drops</h3>
-          <p>Launch with shirts and wristbands, then test bundles, stickers, hats, and event-ready items.</p>
-        </article>
-        <article class="panel">
-          <h3>Gear Links</h3>
-          <p>Add approved affiliate links for beginner controllers, headphones, cases, cables, stands, and software.</p>
-        </article>
+      <CTA title="Join the Directory" text="DJs ages 13-17 may initiate a directory submission. Profiles for DJs under 13 must be submitted and managed by a parent or legal guardian." href="/submit/" label="Start" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Latest Question</p>
+      <h2>What should a new DJ practice first?</h2>
+      <p class="lead">Start with clean transitions, music organization, and recording short practice sets. Fancy tricks make more sense after the basics sound steady.</p>
+      <div class="actions">
+        <a class="button" href="/questions/">Read Q&A</a>
+        <a class="button" href="/learn/">Learning Topics</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Learn</p>
+      <h2>Practical topics for DJs.</h2>
+      <FeatureGrid items={learningTopics} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Spotlight</p>
+      <h2>Stories from the culture.</h2>
+      <p class="lead">Spotlight is editorial and separate from directory eligibility. A DJ can join the directory without receiving a feature.</p>
+      <CTA title="Explore Spotlight" text="Spotlight can feature public DJ work, first-set stories, gear decisions, program features, and lessons learned without becoming a booking or opportunity system." href="/spotlight/" label="Spotlight" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Official Merch</p>
+      <h2>Wear the message. Support Youth DJs.</h2>
+      <p class="lead">T-shirt promotion is prepared, but checkout stays inactive until product, pricing, fulfillment, tax, refund, and checkout details are audited and approved.</p>
+      <a class="button" href="/shop/">Merch Info</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="stamp">Parents</p>
+      <h2>Public links, consent, and moderation.</h2>
+      <p class="lead">Private personal contact information is not published. Public profiles use approved links only, and every submission is reviewed before publication.</p>
+      <CTA title="Support the Culture" text="Find youth DJs, follow their public work, invite eligible DJs to join, and help the directory grow with care." href="/djs/" label="Find Youth DJs" />
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .split {
-    display: grid;
-    gap: 28px;
-  }
-
-  @media (min-width: 860px) {
-    .split {
-      align-items: start;
-      grid-template-columns: 0.8fr 1.2fr;
-    }
-  }
+  .hero-logo { display: block; height: auto; margin-bottom: 28px; max-width: min(520px, 86vw); width: 100%; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+  .filter-row span { border: 2px solid var(--ink); color: var(--ink); font-family: Arial, Helvetica, sans-serif; font-weight: 800; padding: 12px 14px; text-transform: uppercase; }
 </style>
