@@ -3,26 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
 
-const partners = [
-  { title: "Music Community", text: "DJs, producers, radio, venues, and music educators can connect around approved campaign ideas." },
-  { title: "Brands", text: "Brands and sponsors can discuss merch, gear, education, and community support opportunities." },
-  { title: "Affiliate Partners", text: "Relevant gear and education links can support the campaign when the fit is clear and disclosed." },
-  { title: "Mentors", text: "Experienced creatives can help shape safe, parent-aware youth DJ support." }
+const contributors = [
+  { title: "Experienced DJs", text: "Contribute interviews, practical advice, lessons learned, public resources, and perspective without becoming directory members." },
+  { title: "Programs and Educators", text: "Share public information about youth DJ programs, workshops, camps, educators, local scenes, and movements." },
+  { title: "Brands and Supporters", text: "Support resources, education, merchandise, and culture coverage without promising outcomes, rankings, or endorsements." },
+  { title: "Community Resources", text: "Help identify repeated needs, useful tools, cultural history, advocacy topics, and people already doing the work." }
 ];
 ---
 
-<BaseLayout title="Partners" description="Partner information for DJs, producers, radio, venues, brands, music educators, sponsors, and mentors.">
-  <section class="page-head">
-    <div class="page-head-inner">
-      <p class="stamp">Partners</p>
-      <h1>Build Around Youth DJ Culture</h1>
-      <p class="lead">A place for DJs, producers, radio, venues, brands, music educators, sponsors, mentors, and affiliate partners to support the culture without overpromising outcomes.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="section-inner">
-      <FeatureGrid items={partners} />
-      <CTA title="Partner Inquiry" text="Use the contact email for campaign, shop, affiliate, and partner conversations. Partnerships do not guarantee placements or career outcomes." href="/contact/" label="Contact" />
-    </div>
-  </section>
+<BaseLayout title="Partners" description="Contributor and supporter information for youth DJ culture.">
+  <section class="page-head"><div class="page-head-inner"><p class="stamp">Contributors</p><h1>Build a stronger network around youth DJ culture.</h1><p class="lead">Support Youth DJs can recognize contributors, programs, educators, brands, resources, and local scenes without implying formal partnership, endorsement, or representation unless approved.</p></div></section>
+  <section class="section"><div class="section-inner"><FeatureGrid items={contributors} /><CTA title="Contributor Inquiry" text="Use the contact email for resources, program information, editorial ideas, sponsor conversations, and culture-building contributions. Participation does not guarantee placements or career outcomes." href="/contact/" label="Contact" /></div></section>
 </BaseLayout>
