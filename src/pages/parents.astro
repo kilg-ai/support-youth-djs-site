@@ -1,31 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FeatureGrid from "../components/FeatureGrid.astro";
+import CTA from "../components/CTA.astro";
 
 const parentNotes = [
-  { title: "Consent", text: "Minors require parent/legal guardian consent before public features." },
-  { title: "Under 13", text: "Youth DJs under 13 require direct parent/legal guardian involvement in submission, video, and approval." },
-  { title: "Clean Standards", text: "Spotlight material should be parent-approved, youth-appropriate, and suitable for the public campaign." },
-  { title: "No Guarantees", text: "Participation or purchase does not guarantee bookings, sponsorships, coverage, or career outcomes." }
+  { title: "Ages 13-17", text: "Youth DJs ages 13-17 may submit their own public links for directory review. Parents and guardians can still ask questions, request changes, or request removal." },
+  { title: "Under 13", text: "Profiles for DJs under 13 require submission by a parent or legal guardian before review." },
+  { title: "Public Links Only", text: "The directory accepts public URLs only. Support Youth DJs does not accept file uploads through Phase 1 directory intake." },
+  { title: "Reviewed Before Publication", text: "Directory profiles, public links, and related profile details are reviewed before publication. There is no automatic publication." }
+];
+
+const safety = [
+  "Do not submit private phone numbers, private emails, home addresses, schools, exact birth dates, private schedules, or sensitive family information for publication.",
+  "Public profiles should use stage names or public DJ names when appropriate.",
+  "External links may lead to public platforms outside Support Youth DJs, so families should review those links before submission.",
+  "Parents, guardians, and youth DJs can contact Support Youth DJs to request profile correction or removal.",
+  "Support Youth DJs is building a shared platform for youth DJ culture. Participation does not guarantee features, bookings, sponsorships, coverage, income, or career outcomes."
 ];
 ---
 
-<BaseLayout title="Parents" description="Parent and legal guardian information for Support Youth DJs safety, consent, review, and no-guarantee standards.">
+<BaseLayout title="Parents" description="Parent and legal guardian information for Support Youth DJs directory submissions, public links, moderation, privacy, correction, and removal.">
   <section class="page-head">
     <div class="page-head-inner">
       <p class="stamp">Parents</p>
-      <h1>Parent Approval Matters</h1>
-      <p class="lead">Safety, consent, and clear expectations come before any public feature. Support Youth DJs is built to be culture-forward and parent-readable at the same time.</p>
+      <h1>Clear rules for youth DJ profiles.</h1>
+      <p class="lead">Support Youth DJs uses public-link submissions, age routing, and moderation so families understand what may appear on a public youth DJ profile.</p>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
       <FeatureGrid items={parentNotes} />
-      <ul class="list">
-        <li>Parents should review every submitted photo, video, link, and bio before sending.</li>
-        <li>Public features should never include private school, home address, private schedule, or sensitive family information.</li>
-        <li>Parents can use the contact email for questions before any public feature is approved.</li>
-      </ul>
+      <h2>Privacy, Moderation, and Removal</h2>
+      <ul class="list">{safety.map((item) => <li>{item}</li>)}</ul>
+      <CTA title="Questions or Changes" text="Use the contact email for parent questions, profile correction, profile removal, or concerns about a public link." href="/contact/" label="Contact" />
     </div>
   </section>
 </BaseLayout>
